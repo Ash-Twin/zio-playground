@@ -2,7 +2,7 @@ package services
 
 import io.getquill.SnakeCase
 import io.getquill.jdbczio.Quill
-import model.user.{BankUser}
+import model.user.BankUser
 import zio.{ZIO, ZLayer}
 
 import java.sql.SQLException
@@ -17,7 +17,7 @@ import java.sql.SQLException
 class UserService(quill: Quill.Postgres[SnakeCase]) {
   import quill._
 
-  private val userSchema = quote{querySchema[BankUser]("bank_user")}
+  private val userSchema = quote(querySchema[BankUser]("bank_user"))
 
   private def getUsers: ZIO[Any, SQLException, List[BankUser]] = run(userSchema)
 

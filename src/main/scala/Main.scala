@@ -14,11 +14,12 @@ object Main extends ZIOAppDefault {
     val pgLive = DataService.postgresLive
     val user1 = {
       for {
-        c1 <- Random.nextPrintableChar zip Random.nextPrintableChar zip Random.nextPrintableChar zip Random.nextPrintableChar
+        c1 <-
+          Random.nextPrintableChar zip Random.nextPrintableChar zip Random.nextPrintableChar zip Random.nextPrintableChar
         num <- Random.nextInt
       } yield BankUser(
         UUID.randomUUID().toString,
-        c1._1.toString+c1._2.toString+c1._3.toString+c1._4.toString,
+        c1._1.toString + c1._2.toString + c1._3.toString + c1._4.toString,
         num,
         "Male",
         LocalDateTime.now(),

@@ -1,1 +1,18 @@
-{"name":"sbt","version":"1.7.1","bspVersion":"2.0.0-M5","languages":["scala"],"argv":["/Users/chenyuliu/.sdkman/candidates/java/22.1.0.r17-grl/bin/java","-Xms100m","-Xmx100m","-classpath","/Users/chenyuliu/Library/Application Support/JetBrains/IntelliJIdea2023.2/plugins/Scala/launcher/sbt-launch.jar","-Dsbt.script=/opt/homebrew/bin/sbt","xsbt.boot.Boot","-bsp"]}
+{
+  "name": "sbt",
+  "version": "1.7.1",
+  "bspVersion": "2.0.0-M5",
+  "languages": [
+    "scala"
+  ],
+  "argv": [
+    "/Users/chenyuliu/.sdkman/candidates/java/22.1.0.r17-grl/bin/java",
+    "-Xms100m",
+    "-Xmx100m",
+    "-classpath",
+    "/Users/chenyuliu/Library/Application Support/JetBrains/IntelliJIdea2023.2/plugins/Scala/launcher/sbt-launch.jar",
+    "-Dsbt.script=/opt/homebrew/bin/sbt",
+    "xsbt.boot.Boot",
+    "-bsp"
+  ]
+}
