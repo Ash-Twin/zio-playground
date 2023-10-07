@@ -7,9 +7,11 @@ import java.time.LocalDateTime
  * @since 10/7/23 Saturday
 **/
     
-case class User(
+case class BankUser(
     userId:String,
     userName:String,
     age:Int,
-    createDate:LocalDateTime
+    gender:String,
+    createTime:LocalDateTime,
+    lastLoginTime:LocalDateTime
                )
