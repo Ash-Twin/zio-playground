@@ -12,6 +12,7 @@ object Main extends ZIOAppDefault {
     printLine("Welcome to your first ZIO app!")
     val dataSourceLive = DataService.dataSourceLive
     val pgLive = DataService.postgresLive
+    val userServiceLive = UserService.live
     val user1 = {
       for {
         c1 <-
@@ -26,12 +27,15 @@ object Main extends ZIOAppDefault {
         LocalDateTime.now()
       )
     }
+    val layers =
+      ZLayer.make[UserService](userServiceLive, dataSourceLive, pgLive, ZLayer.Debug.mermaid)
+
     (for {
       user <- user1
       _ <- UserService.createUser(user)
       users <- UserService.getUsers
       _ <- Console.printLine(users.mkString("\n"))
-    } yield ()).provide(UserService.live, dataSourceLive, pgLive)
+    } yield ()).provide(layers)
 
   }
 }
